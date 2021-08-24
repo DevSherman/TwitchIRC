@@ -2,11 +2,10 @@
 Library to connect to twitch chat, ready to use with unity (other implementations can be done easily)
 
 USE in Unity:
-
+```
 public string channel_name;
 public string oauth; //https://twitchapps.com/tmi/
 private TwitchIRC IRC;
-
 private void Start()
 {
     usersConnected = new List<string>();
@@ -24,3 +23,4 @@ private void Update()
 {
     IRC.Thread_Tick();
 }
+```
