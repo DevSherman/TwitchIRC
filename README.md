@@ -8,8 +8,6 @@ public string oauth; //https://twitchapps.com/tmi/
 private TwitchIRC IRC;
 private void Start()
 {
-    usersConnected = new List<string>();
-
     IRC = new TwitchIRC(channel_name, oauth);
     IRC.DataAvailable += IRC_DataAvailable;
 }
