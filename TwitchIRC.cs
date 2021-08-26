@@ -52,6 +52,12 @@ public class TwitchIRC
     public IRCData Read()
     {
         var result = socket.ReadLine();
+        
+        if(result == "PING :tmi.twitch.tv")
+        {
+            SendIRC("PONG :tmi.twitch.tv");
+            return new IRCData(null, null, result);
+        }
 
         if (result.Contains("PRIVMSG"))
         {
